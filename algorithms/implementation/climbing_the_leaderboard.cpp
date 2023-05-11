@@ -20,19 +20,19 @@ void climbingLeaderboard(
     //  - Highest score player is ranked 1
     //  - Players with same scores have the same ranking number
     //  - Next player(s) will be ranked with the following ranking number
-    std::vector<std::pair<int, int>> learderboard(n);
-    learderboard[0] = std::pair<int, int>(1, ranked[0]);
+    std::vector<std::pair<int, int>> leaderboard(n);
+    leaderboard[0] = std::pair<int, int>(1, ranked[0]);
 
     int rank = 1;
     for (int i = 1; i < n; ++i) {
-        if (learderboard[i - 1].second > ranked[i]) {
+        if (leaderboard[i - 1].second > ranked[i]) {
             rank++;
         }
-        learderboard[i] = std::pair<int, int>(rank, ranked[i]);
+        leaderboard[i] = std::pair<int, int>(rank, ranked[i]);
     }
 
     std::vector<int>::iterator it = scores.begin();
-    std::vector<std::pair<int, int>>::reverse_iterator rt = learderboard.rbegin();
+    std::vector<std::pair<int, int>>::reverse_iterator rt = leaderboard.rbegin();
     for (; it != scores.end();) {
         if (*it < rt->second) {
             // If the score is inferior to the current leaderboard player
@@ -50,7 +50,7 @@ void climbingLeaderboard(
             // If the score is superior
             // We find the first leaderboard player with higher score
             // if there is none, player is ranked first
-            if (rt != learderboard.rend()) {
+            if (rt != leaderboard.rend()) {
                 rt++;
             } else {
                 *it = 1;

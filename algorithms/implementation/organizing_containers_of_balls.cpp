@@ -8,7 +8,7 @@
 
 /*
  * @param container: Array of containers with the initial distribution of different types of balls
- * @return: boolean if is possible to rearrange each conatiner with only one type of ball
+ * @return: boolean if is possible to rearrange each container with only one type of ball
  */
 bool organizingContainers(std::vector<std::vector<int>> container)
 {
@@ -32,7 +32,7 @@ bool organizingContainers(std::vector<std::vector<int>> container)
     std::sort(balls_per_type.begin(), balls_per_type.end());
 
     // Finally, we check to see if we will be able to
-    // allocate all ball types in a unique conatiner
+    // allocate all ball types in a unique container
     for (int i = 0; i < n; ++i) {
         if (containers_cap[i] != balls_per_type[i]) {
             return false;

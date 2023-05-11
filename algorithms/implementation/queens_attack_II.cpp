@@ -20,7 +20,7 @@ struct Square
  * @param k: number of obstacles
  * @param queen: queen's square position
  * @param obstacles: array of k obstacles, with each i-th obstacle square position
- * @return: number of availables squares the queen can attack
+ * @return: number of available squares the queen can attack
  */
 int queensAttack(int n, int k, const Square queen, std::vector<Square> obstacles)
 {
