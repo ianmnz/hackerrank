@@ -8,6 +8,10 @@
 #include <algorithm>
 
 
+/*
+ * @param prices: Prices of houses
+ * @return The minimum loss
+ */
 long minimumLoss(const std::vector<long>& prices)
 {
     const int n = prices.size();

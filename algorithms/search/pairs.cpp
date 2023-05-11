@@ -7,6 +7,11 @@
 #include <algorithm>
 
 
+/*
+ * @param k: Distance between numbers
+ * @param arr: Base array
+ * @return The number of pairs with distance equal to k
+ */
 int pairs(const int k, std::vector<int>& arr)
 {
     const int n = arr.size();
