@@ -6,6 +6,11 @@
 #include <string>
 
 
+/*
+ * @param p: String to query
+ * @param k: Number of times to repeat n
+ * @return The super digit in string type
+ */
 std::string find_super_digit(std::string p, const int k)
 {
     if (p.size() == 1) {
@@ -24,6 +29,11 @@ std::string find_super_digit(std::string p, const int k)
     return find_super_digit(std::to_string(k * sum), 1);
 }
 
+/*
+ * @param n: Base string to be repeated
+ * @param k: Number of times to repeat n
+ * @return The super digit
+ */
 int superDigit(std::string n, const int k)
 {
     return std::stoi(find_super_digit(n, k));

@@ -6,7 +6,11 @@
 #include <vector>
 
 
-// We will use Kadane's Algorithm
+/*
+ * Kadane's Algorithm
+ * @param arr: Array of numbers
+ * @return MaxSubarray and MaxSequence
+ */
 std::vector<long> maxSubarray(const std::vector<int>& arr)
 {
     long subarr = 0l;

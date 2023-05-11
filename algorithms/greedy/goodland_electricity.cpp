@@ -6,6 +6,11 @@
 #include <vector>
 
 
+/*
+ * @param k: Coverage
+ * @param k: Array with available cities
+ * @return Number of built pylons
+ */
 int pylons(const int k, const std::vector<int> &arr)
 {
     int nb_built = 0;

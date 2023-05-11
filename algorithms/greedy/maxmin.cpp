@@ -7,6 +7,11 @@
 #include <algorithm>
 
 
+/*
+ * @param k: Distance between elements of the array
+ * @param arr: Base array
+ * @return Unfairness value
+ */
 int maxMin(const int k, std::vector<int> arr)
 {
     std::sort(arr.begin(), arr.end());

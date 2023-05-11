@@ -8,6 +8,11 @@
 #include <algorithm>
 
 
+/*
+ * @param k: Number of buyers
+ * @param flowers: Cost of the flowers
+ * @return Total cost
+ */
 long getMinimumCost(const int k, const std::vector<int> flowers)
 {
     const int n = flowers.size();

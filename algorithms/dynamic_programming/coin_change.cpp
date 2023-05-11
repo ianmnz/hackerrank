@@ -6,6 +6,11 @@
 #include <vector>
 
 
+/*
+ * @param n: Number to be represented
+ * @param coins: Available coins
+ * @return Ways of representing n with coins
+ */
 long getWays(int n, const std::vector<int>& coins)
 {
     // Initialise a vector of size n + 1 with 0's

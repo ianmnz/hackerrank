@@ -6,6 +6,12 @@
 #include <vector>
 
 
+/*
+ * Disjoint sets algorithm : find
+ * @param root: Root vector
+ * @param i: Node to find the root
+ * @return: i's root node
+ */
 int find(std::vector<int>& arr, const int n)
 {
     if (arr[n] < 0) {
@@ -17,9 +23,13 @@ int find(std::vector<int>& arr, const int n)
     }
 }
 
-// Slightly modified Disjoint Set algorithm to
-// count the number of nodes belonging to the same
-// root node
+/*
+ * Disjoint sets algorithm : union;
+ * Modified to count the number of nodes belonging to the same root
+ * @param root: Root vector
+ * @param i: Left node
+ * @param j: Right node
+ */
 void unite(std::vector<int>& arr, const int n1, const int n2)
 {
     const int root1 = find(arr, n1);
@@ -31,6 +41,10 @@ void unite(std::vector<int>& arr, const int n1, const int n2)
     }
 }
 
+/*
+ * @param gb: Graph in a edge structured
+ * @return: Smallest and biggest components
+ */
 std::vector<int> componentsInGraph(const std::vector<std::vector<int>>& gb)
 {
     // We count the number of nodes N in the graph

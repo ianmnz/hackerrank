@@ -6,7 +6,11 @@
 #include <vector>
 
 
-// Sieve of Eratosthenes
+/*
+ * Sieve of Eratosthenes
+ * @param n: Max number of numbers to check for primes
+ * @return Number of primes up to n
+ */
 int primes_up_to_n(const int n)
 {
     std::vector<int> primes(n + 1, 1);
@@ -29,6 +33,10 @@ int primes_up_to_n(const int n)
     return nb_primes;
 }
 
+/*
+ * @param n: The size of the game
+ * @return true if Alice wins, false otherwise
+ */
 bool sillyGame(const int n)
 {
     const int nb_primes = primes_up_to_n(n);
@@ -48,6 +56,6 @@ bool sillyGame(const int n)
 int main()
 {
     const int n = 5;
-    std::cout << std::boolalpha << sillyGame(n) << std::endl;   // true
+    std::cout << std::boolalpha << sillyGame(n) << std::endl;   // Expected output: true
     return 0;
 }

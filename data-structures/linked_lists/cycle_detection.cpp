@@ -17,6 +17,10 @@ struct SinglyLinkedListNode
 };
 
 
+/*
+ * @param head: Head node
+ * @return: true if has cycle, false otherwise
+ */
 bool has_cycle(SinglyLinkedListNode* head) {
     std::set<SinglyLinkedListNode*> visited;
 

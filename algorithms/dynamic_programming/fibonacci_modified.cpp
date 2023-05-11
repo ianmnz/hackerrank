@@ -6,6 +6,11 @@
 #include <vector>
 
 
+/*
+ * @param i: Index of the value to compute
+ * @param fibs: Array stocking previously computed values
+ * @return Fib_i
+ */
 int fib(const int i, std::vector<long long>& fibs)
 {
     if (fibs[i] >= 0) {
@@ -22,6 +27,12 @@ int fib(const int i, std::vector<long long>& fibs)
     }
 }
 
+/*
+ * @param t1: Initial Fib value, F_0
+ * @param t2: Initial Fib value, F_1
+ * @param n: Fibonacci number to check, F_n
+ * @return F_n
+ */
 int fibonacciModified(const int t1, const int t2, const int n)
 {
     std::vector<long long> fibs (n, -1);

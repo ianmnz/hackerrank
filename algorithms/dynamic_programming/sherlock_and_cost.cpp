@@ -6,6 +6,10 @@
 #include <vector>
 
 
+/*
+ * @param B: Array with limiting values
+ * @return Max cost
+ */
 int cost(const std::vector<int>& B)
 {
     const int n = B.size();

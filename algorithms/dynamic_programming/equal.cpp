@@ -7,6 +7,10 @@
 #include <algorithm>
 
 
+/*
+ * @param arr: Array with initial distribution
+ * @return The number of operations to equalize
+ */
 int equal(const std::vector<int>& arr)
 {
     int nb_op_0 = 0;    // Canonical number of operations

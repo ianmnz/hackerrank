@@ -7,6 +7,11 @@
 #include <numeric>
 
 
+/*
+ * @param n: Number of students
+ * @param arr: Array with the grades
+ * @return Number of candies to buy
+ */
 long candies(const int n, const std::vector<int>& arr)
 {
     std::vector<long> candies(n, 1l);
