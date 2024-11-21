@@ -8,7 +8,12 @@
 #include <map>
 
 
-int get_nb_swaps(std::vector<int> arr, const std::vector<int> &sorted)
+/**
+ * @param arr Array to be sorted
+ * @param sorted Reference sorted array
+ * @return the minimum number of swaps necessary to go from array to sorted
+ */
+int get_swap_distance(std::vector<int> arr, const std::vector<int> &sorted)
 {
     std::map<int, size_t> target;
     for (int i = 0; i< sorted.size(); ++i) {
@@ -28,6 +33,10 @@ int get_nb_swaps(std::vector<int> arr, const std::vector<int> &sorted)
     return nb_swaps;
 }
 
+/**
+ * @param arr Array to be sorted
+ * @return The minimum number of necessary swaps to sort the array
+ */
 int lilysHomework(const std::vector<int> &arr)
 {
     std::vector<int> ascending(arr);
@@ -36,8 +45,8 @@ int lilysHomework(const std::vector<int> &arr)
 
     std::vector<int> descending(ascending.rbegin(), ascending.rend());
 
-    const int dist_asc = get_nb_swaps(arr, ascending);
-    const int dist_des = get_nb_swaps(arr, descending);
+    const int dist_asc = get_swap_distance(arr, ascending);
+    const int dist_des = get_swap_distance(arr, descending);
 
     return std::min(dist_asc, dist_des);
 }

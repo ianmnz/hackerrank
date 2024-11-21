@@ -9,6 +9,10 @@
 #include <algorithm>
 
 
+/**
+ * @param s string to be right-trimmed
+ * @return the right-trimmed string
+ */
 inline std::string rtrim(std::string s) {
     s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch)
         {
@@ -18,11 +22,22 @@ inline std::string rtrim(std::string s) {
     return s;
 }
 
-bool helper(const std::vector<std::string> &passwords,
-            const std::string &loginAttempt,
-            const size_t pos,
-            std::stringstream &ss,
-            std::vector<bool>& visited)
+/**
+ * @brief Recursive DFS helper function
+ *
+ * @param passwords Array of all passwords
+ * @param loginAttempt String concatenating (or not) the passwords
+ * @param pos Current position in loginAttempt
+ * @param ss String output
+ * @param visited Array of bool to check if position was already visited
+ * @return true if loginAttempt concatenates passwords,
+ * @return false otherwise
+ */
+bool dfs(const std::vector<std::string> &passwords,
+         const std::string &loginAttempt,
+         const size_t pos,
+         std::stringstream &ss,
+         std::vector<bool>& visited)
 {
     visited[pos] = true;
 
@@ -39,7 +54,7 @@ bool helper(const std::vector<std::string> &passwords,
         if (match == password) {
             std::stringstream ss2;
             if (!visited[pos + length]
-                && helper(passwords, loginAttempt, pos + length, ss2, visited))
+                && dfs(passwords, loginAttempt, pos + length, ss2, visited))
             {
                 ss << password << " " << ss2.str();
                 return true;
@@ -50,12 +65,17 @@ bool helper(const std::vector<std::string> &passwords,
     return false;
 }
 
+/**
+ * @param passwords Array of all passwords
+ * @param loginAttempt String concatenating (or not) the passwords
+ * @return Passwords used to concatenate loginAttempt or 'WRONG PASSWORD'
+ */
 std::string passwordCracker(const std::vector<std::string> &passwords, const std::string loginAttempt)
 {
     std::stringstream ss;
     std::vector<bool> visited(loginAttempt.size());
 
-    if (helper(passwords, loginAttempt, 0, ss, visited)) {
+    if (dfs(passwords, loginAttempt, 0, ss, visited)) {
         return rtrim(ss.str());
     }
 
