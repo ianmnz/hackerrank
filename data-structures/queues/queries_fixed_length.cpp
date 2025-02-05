@@ -1,8 +1,17 @@
+/**
+ * https://www.hackerrank.com/challenges/queries-with-fixed-length/problem
+ */
+
 #include <deque>
 #include <iostream>
 #include <vector>
 
 
+/**
+ * @param arr Array of integers
+ * @param queries Array of queries
+ * @return Array of minimax
+ */
 std::vector<int> solve(const std::vector<int> &arr,
                        const std::vector<int> &queries)
 {
@@ -43,7 +52,7 @@ std::vector<int> solve(const std::vector<int> &arr,
 }
 
 
-int main(int argc, char const *argv[])
+int main()
 {
     const std::vector<int> arr{33, 11, 44, 11, 55};
     const std::vector<int> queries{1, 2, 3, 4, 5};

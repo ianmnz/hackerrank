@@ -23,12 +23,12 @@ long gridlandMetro(const long n,
 {
     using Interval = std::pair<long, long>;
     std::set<Interval> intervals;
-    
+
     for (const auto& [r, c1, c2] : tracks) {
         const long aux = (long)(r - 1) * m;
         intervals.emplace((long)(c1 - 1) + aux, (long)(c2 - 1) + aux);
     }
-    
+
     long available = 0l;
     long it = 0l;
 
@@ -41,11 +41,11 @@ long gridlandMetro(const long n,
             it = interval.second + 1l;
         }
     }
-    
+
     if (const long total = m * n; it < total) {
         available += total - it;
     }
-    
+
     return available;
 }
 
